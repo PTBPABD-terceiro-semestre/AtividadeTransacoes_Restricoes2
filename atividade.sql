@@ -50,8 +50,7 @@ create table avaliacaocontinua.works(
 O atributo person_name da relação works deverá existir na relação employee.
 Utilize as ações em cascata: update e delete.*/
 
-alter table employee add person_name_works varchar(40);
-alter table employee add constraint fk_works foreign key (person_name) references works(person_name) 
+alter table avaliacaocontinua.works add constraint fk_employee foreign key (person_name) references avaliacaocontinua.employee(person_name) 
 on delete cascade 
 on update cascade;
 
@@ -59,8 +58,7 @@ on update cascade;
 O atributo company_name da relação works deverá existir na relação company.
 Utilize as ações em cascata: update e delete.*/
 
-alter table company add company_name_works varchar(40);
-alter table company add constraint fk_works2 foreign key (company_name_works) references works(company_name) 
+alter table avaliacaocontinua.works add constraint fk_company foreign key (company_name) references avaliacaocontinua.company(company_name) 
 on delete cascade 
 on update cascade;
 
@@ -68,7 +66,6 @@ on update cascade;
 O atributo person_name da relação manages deverá existir na relação employee.
 Utilize as ações em cascata: update e delete.*/
 
-alter table employee add person_name_manages varchar(40);
-alter table employee add constraint fk_manages foreign key (person_name_manages) references manages(person_name) 
+alter table avaliacaocontinua.manages add constraint fk_employee2 foreign key (person_name) references avaliacaocontinua.employee(person_name) 
 on delete cascade 
 on update cascade;
